@@ -32,8 +32,8 @@
      <ul>
       <li><a href="#">CSE</a>
         <ul>
-      <li><a href="#">Faculaty</li></a>
-      <li><a href="#">Student</li></a>
+            <li><a href="#" class="fun" onclick="call();">Faculaty</li></a>
+              <li><a href="#"class="fun" onclick="call();">Student</li></a>
       </ul>
       </li>
      </ul>
@@ -145,6 +145,10 @@ window.onclick = function(e) {
       setting.classList.remove('show');
     }
   }
+}
+ function call(){
+ var s= prompt("Enter your ID");
+  alert("your ID is"+s);
 }
 </script>
 </body>
