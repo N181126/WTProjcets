@@ -1,0 +1,126 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Validation</title>
+        <style type="text/css">
+            div{
+                background-image:linear-gradient(#ed213a,#93291e);
+                width:400px;
+                height:500px;
+                font-style: bold;
+                font-size: 20px;
+            }
+
+            body{
+                background-image: linear-gradient(#4e54c8,#78ffd6);
+
+            }
+        </style>
+        <script type="text/javascript">
+            function v(){
+                    var k=document.getElementById("a").value;
+                    var l=document.getElementById("c").value;
+                    var b2=document.getElementById("b").value;
+                    var g1=document.getElementById("g").checked;
+                    var h1=document.getElementById("h").checked;
+                    //const c1 = document.querySelector('#g:checked') !== null;
+                    //const c2 = document.querySelector('#h:checked') !== null;
+                    var j1=document.getElementById("j").value;
+                    var pas1=document.getElementById("pas").value;
+                    document.getElementById("d").value=k+""+l;
+                    var m =/^[A-Z,a-z]{3,}$/
+                    var n=/^[a-z,A-Z]{2,}$/
+                    var e= /^$/
+                    var p=/^[6-9]\d{9}$/
+                    var p1=/^[6-9]\d{2}-[0-9]\d{2}-[0-9]\d{2}$/
+                    if((m.test(k))&&(m.test(l)))
+                    {
+                        if(((n.test(b2)))||(e.test(b2)))
+                        {
+                            if(pas1.length<4)
+                            {
+                                document.getElementById("pas").style.borderColor="red";
+                                return false;
+                            }
+                            if(g1)
+                            {
+                                if(p.test(j1))
+                                {
+                                    return true;
+                                }
+                                else{
+
+                                    return false;
+                                }
+                                
+                            }
+                            else if(h1)
+                            {
+                                if(p1.test(j1))
+                                {
+                                    return true;
+                                }
+                                else{
+                                    return false;
+                                }
+                                
+                            }
+                            else
+                            {
+                                return false;
+                            }
+
+                                
+                        }
+                        else{
+                            return false;
+                     
+                           }   
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                </script>
+                <script>
+                function change(){
+                    var u=document.getElementById("sp").checked;
+                    if(u)
+                    {
+                        document.getElementById("pas").type="text";
+                        
+                    }
+                    else{
+                        document.getElementById("pas").type="password";
+                    }
+                }
+            </script>
+    </head>
+    <body>
+        <br><br><center><div>
+            <form action="jk.php" method="post" onsubmit="return v()">
+            <table>
+                <h1><b>Form</b></h1>
+                <tr><td><b>Firstname:</b></td><td><input type="text" id="a"></td></tr>
+                <tr><td><b>Middlename:</b></td><td><input type="text" id="b"></td></tr>
+                <tr><td><b>Lastname:</b></td><td><input type="text" id="c"></td></tr><b></b>
+                <tr><td><b>Fullname:</b></td><td><input type="text" id="d" readonly></td></tr>
+                <tr><td><b>Checkboxes: </b></td>
+                <td><input type="radio" name="s" id="g">India
+                <input type="radio" name="s"id="h">Usa<br></td></tr>
+                <tr><td><b>Phone NO:</b></td><td><input type="text" id="j"></td></tr>
+                <tr><td><b>Password:</b></td><td><input type="password" id="pas"></td></tr>
+                <tr><td><b>show</b></td><td><input type="checkbox" id="sp" onclick="change();"></td></tr>
+                <p id="two">
+                <tr><td><b>Hobbies:</b></td></tr>
+                <tr><td></td><td>Cricket<input type="checkbox" id="cr"></td>
+                <tr><td></td><td>Watching Tv<input type="checkbox" id="Wa"></td></tr>
+                <tr><td></td><td>Singing<input type="checkbox" id="si"></td></tr>
+                <tr><td>Date of birth:</td><td><input type="date"</td></tr>
+                <tr><td></td><td><input type="submit" value="submit" id="sk"></td></tr></p>
+            
+            </table>
+            </form>
+        </div></center>
+    </body>
+</html>
